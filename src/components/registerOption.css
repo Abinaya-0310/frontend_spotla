@@ -1,0 +1,117 @@
+.register-option-container {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 4rem 7rem 4rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.875rem;
+  font-weight: 700;
+  max-width: 480px;
+  border-radius: 30px;
+  font-family: 'Inria Serif', serif;
+  position: relative;
+  margin: 0 auto;
+  height: 956px;
+  width: 440px;
+  border: 3px solid #000000;
+
+  /* 🌌 Radial gradient background from Figma */
+  background: radial-gradient(circle, #0000ff 0%, #000000 100%);
+}
+
+
+.service-title {
+  align-self: stretch;
+  font-size: 2.25rem;
+}
+
+.service-logo {
+  object-fit: contain;
+  margin-top: 4rem;
+  max-width: 100%;
+  border-radius: 1.5rem;
+  aspect-ratio: 0.75;
+  width: 116px;
+}
+
+.login-title {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.button-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.customer-button {
+  padding: 0.625rem 2.5rem 1.25rem 2.5rem;
+  max-width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #fbbf24;
+  border-radius: 1.5rem;
+  width: 246px;
+  border: none;
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+}
+
+.partner-button {
+  padding: 0.75rem 3.5rem 1rem 3.5rem;
+  max-width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #facc15;
+  border-radius: 1.5rem;
+  width: 246px;
+  border: none;
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+}
+
+.customer-button:hover,
+.partner-button:hover {
+  opacity: 0.9;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.customer-button:active,
+.partner-button:active {
+  transform: translateY(1px);
+}
+
+.bottom-logo {
+  object-fit: contain;
+  margin-top: 6rem;
+  max-width: 100%;
+  aspect-ratio: 1.01;
+  width: 150px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .register-option-container {
+    padding: 2rem 2rem 5rem 2rem;
+    font-size: 1.5rem;
+  }
+
+  .service-title {
+    font-size: 1.875rem;
+  }
+
+  .customer-button,
+  .partner-button {
+    font-size: 1.5rem;
+    width: 200px;
+  }
+}

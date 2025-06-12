@@ -1,0 +1,133 @@
+/* Import Inria Serif font */
+@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Base styles for the splash screen container */
+.splash-screen-container {
+  font-family: 'Inria Serif', serif;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+  height: 956px;
+  width: 440px;
+  border-radius: 30px;
+  border: 3px solid #000000;
+
+  /* 🌌 Radial gradient background from Figma */
+  background: radial-gradient(circle, #0000ff 0%, #000000 100%);
+}
+
+/* Title styling */
+.splash-title {
+  position: absolute;
+  font-size: 2.25rem;
+  font-style: italic;
+  font-weight: 700;
+  color: white;
+  height: 58px;
+  left: 65px;
+  top: 60px;
+  width: 374px;
+}
+
+/* Logo styling */
+.splash-logo {
+  object-fit: cover;
+  position: absolute;
+  border: 2px solid white;
+  height: 253px;
+  left: 126px;
+  border-radius: 30px;
+  top: 182px;
+  width: 188px;
+}
+
+/* Tagline styling */
+.splash-tagline {
+  position: absolute;
+  height: 96px;
+  font-size: 2.25rem;
+  font-style: italic;
+  font-weight: 700;
+  text-align: center;
+  color: white;
+  left: 33px;
+  top: 519px;
+  width: 374px;
+}
+
+/* Bottom image styling */
+.splash-bottom-image {
+  object-fit: cover;
+  position: absolute;
+  left: 0;
+  height: 248px;
+  border-radius: 120px 120px 60px 60px;
+  top: 657px;
+  width: 440px;
+}
+
+/* Tablet responsive styles */
+@media (max-width: 768px) {
+  .splash-screen-container {
+    height: auto;
+    max-width: 440px;
+    min-height: 956px;
+    width: 90%;
+  }
+
+  .splash-title {
+    font-size: 2.25rem;
+    text-align: center;
+    left: 7.5%;
+    width: 85%;
+  }
+
+  .splash-logo {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .splash-tagline {
+    font-size: 2.25rem;
+    left: 7.5%;
+    width: 85%;
+  }
+
+  .splash-bottom-image {
+    left: 0;
+    width: 100%;
+  }
+}
+
+/* Mobile responsive styles */
+@media (max-width: 640px) {
+  .splash-screen-container {
+    border-radius: 24px;
+    border-width: 2px;
+    width: 95%;
+  }
+
+  .splash-title {
+    top: 40px;
+    height: auto;
+    font-size: 1.875rem;
+  }
+
+  .splash-logo {
+    height: 202px;
+    top: 120px;
+    width: 150px;
+  }
+
+  .splash-tagline {
+    height: auto;
+    font-size: 1.875rem;
+    top: 380px;
+  }
+
+  .splash-bottom-image {
+    height: 200px;
+    border-radius: 80px 80px 40px 40px;
+    top: 500px;
+  }
+}

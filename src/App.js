@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import Splash from './components/Splashscreen';
+import RegisterOption from './components/registerOption';
+import Customer from './components/Customer';
 
 function App() {
+  const [currentPage, setCurrentPage] = useState('splash'); // 'splash', 'register', 'customer'
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setCurrentPage('register');
+    }, 10000); // Show splash for 10 seconds
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleRegisterProceed = () => {
+    setCurrentPage('customer');
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {currentPage === 'splash' && <Splash />}
+      {currentPage === 'register' && <RegisterOption onProceed={handleRegisterProceed} />}
+      {currentPage === 'customer' && <Customer />}
+    </>
   );
 }
 
