@@ -28,11 +28,12 @@
 
 .service-logo {
   object-fit: contain;
-  margin-top: 4rem;
+  margin-top: 2rem;
+  margin-left: 35%;
   max-width: 100%;
   border-radius: 1.5rem;
   aspect-ratio: 0.75;
-  width: 116px;
+  width: 130px;
 }
 
 .login-title {

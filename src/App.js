@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setCurrentPage('register');
-    }, 10000); // Show splash for 10 seconds
+    }, 3000); // Show splash for 10 seconds
 
     return () => clearTimeout(timer);
   }, []);
@@ -30,6 +30,9 @@ function App() {
   const handleNavigateToMobileVerify = () => {
     setCurrentPage('mobileVerify');
   };
+  const handleVerificationSuccess = () => {
+    setCurrentPage('customer'); // Navigate back to customer login after verification
+  };
 
 
   return (
@@ -44,7 +47,7 @@ function App() {
       )}
       {currentPage === 'registerCustomer' && (<RegisterCustomer onRegister={handleNavigateToMobileVerify}/>)}
       {currentPage === 'menu' && <MenuScreen />}
-      {currentPage === 'mobileVerify' && <MobileVerify />}
+      {currentPage === 'mobileVerify' && (<MobileVerify onVerificationSuccess={handleVerificationSuccess} />)}
     </>
   );
 }

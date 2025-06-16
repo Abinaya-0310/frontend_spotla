@@ -14,7 +14,8 @@ function CustomerLogin({ onSignup, onLoginSuccess }) {
   };
 
   const handleSubmit = (e) => {
-
+    e.preventDefault();
+    setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
       onLoginSuccess(); // ✅ Trigger parent to go to menu

@@ -4,7 +4,7 @@ import "./registerOption.css";
 
 function RegisterOption({ onProceed }) {
   return (
-    <main className="register-option-container">
+    <div className="splash-screen-container">
       <header className="service-title">
         SPOTLA SERVICES
       </header>
@@ -32,9 +32,9 @@ function RegisterOption({ onProceed }) {
       <img
         src="/tool.png"
         alt="Bottom logo"
-        className="bottom-logo"
+        className="splash-bottom-image"
       />
-    </main>
+    </div>
   );
 }
 

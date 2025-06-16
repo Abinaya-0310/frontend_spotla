@@ -35,10 +35,7 @@ header {
   height: auto;
   object-fit: contain;
   border-radius: 1rem;
-  margin-bottom: 0.3rem;
-  margin-top: -0.3rem; /* move it a little higher */
-  margin-right: 3.5rem;
-  margin-left:-3.5rem;
+  margin-top: 1rem;
 }
 
 

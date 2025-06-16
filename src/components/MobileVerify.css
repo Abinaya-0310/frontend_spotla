@@ -1,0 +1,248 @@
+.mobile-verify-container {
+  position: relative;
+  margin: 0 auto;
+  height: 956px;
+  border-radius: 30px;
+  width: 440px;
+    border: 3px solid #000000;
+
+  /* 🌌 Radial gradient background from Figma */
+  background: radial-gradient(circle, #0000ff 0%, #000000 100%);
+}
+
+.mobile-verify-header {
+  position: absolute;
+  flex-shrink: 0;
+  font-size: 2.25rem;
+  font-style: italic;
+  font-weight: bold;
+  color: white;
+  height: 58px;
+  left: 66px;
+  top: 52px;
+  width: 374px;
+}
+
+.verification-logo {
+  position: absolute;
+  flex-shrink: 0;
+  border-radius: 1.5rem;
+  border: 2px solid white;
+  aspect-ratio: 97/130;
+  height: 130px;
+  left: 156px;
+  top: 110px;
+  width: 97px;
+}
+
+.verification-title {
+  position: absolute;
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  height: 29px;
+  left: 47px;
+  top: 295px;
+  width: 347px;
+}
+
+.verification-instruction {
+  position: absolute;
+  left: 16px;
+  height: 48px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  top: 379px;
+  width: 376px;
+}
+
+.otp-input-container {
+  position: absolute;
+  flex-shrink: 0;
+  border-radius: 1rem;
+  border: 3px solid black;
+  background-color: #d4d4d8;
+  height: 50px;
+  left: 69px;
+  top: 456px;
+  width: 302px;
+}
+
+.otp-input {
+  width: 100%;
+  height: 100%;
+  padding: 0 16px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: black;
+  font-weight: bold;
+  font-size: 1.125rem;
+}
+
+.otp-input::placeholder {
+  color: #4b5563;
+}
+
+.verify-button-container {
+  position: absolute;
+  flex-shrink: 0;
+  height: 57px;
+  left: 147px;
+  top: 568px;
+  width: 146px;
+}
+
+.verify-button {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #facc15;
+  border-radius: 1.5rem;
+  border: 2px solid black;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.verify-button:hover {
+  background-color: #eab308;
+}
+
+.verify-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.verify-button-text {
+  position: absolute;
+  height: 24px;
+  font-size: 1.25rem;
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  left: 37px;
+  top: 17px;
+  width: 69px;
+}
+
+/* Medium screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .mobile-verify-container {
+    width: 100%;
+    height: 100vh;
+    max-width: 440px;
+    min-height: 956px;
+  }
+
+  .mobile-verify-header {
+    font-size: 2.25rem;
+    text-align: center;
+    left: 5%;
+    width: 90%;
+  }
+
+  .verification-logo {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 110px;
+  }
+
+  .verification-title {
+    font-size: 1.5rem;
+    left: 5%;
+    width: 90%;
+  }
+
+  .verification-instruction {
+    font-size: 1.125rem;
+    left: 5%;
+    width: 90%;
+  }
+
+  .otp-input-container {
+    width: 80%;
+    left: 10%;
+  }
+
+  .verify-button-container {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Small screens (max-width: 640px) */
+@media (max-width: 640px) {
+  .mobile-verify-container {
+    box-sizing: border-box;
+    padding: 20px;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .mobile-verify-header {
+    left: 0;
+    top: 40px;
+    padding: 0 10px;
+    width: 100%;
+    height: auto;
+    font-size: 1.875rem;
+    text-align: center;
+  }
+
+  .verification-logo {
+    top: 80px;
+    left: 50%;
+    width: 80px;
+    transform: translateX(-50%);
+    height: 107px;
+  }
+
+  .verification-title {
+    left: 0;
+    padding: 0 10px;
+    width: 100%;
+    font-size: 1.125rem;
+    top: 220px;
+  }
+
+  .verification-instruction {
+    left: 0;
+    padding: 0 10px;
+    width: 100%;
+    font-size: 1rem;
+    top: 280px;
+  }
+
+  .otp-input-container {
+    height: 45px;
+    left: 5%;
+    top: 340px;
+    width: 90%;
+  }
+
+  .verify-button-container {
+    left: 50%;
+    transform: translateX(-50%);
+    height: 50px;
+    top: 420px;
+    width: 130px;
+  }
+
+  .verify-button {
+    border-radius: 1.5rem;
+    height: 50px;
+    width: 130px;
+  }
+
+  .verify-button-text {
+    left: 50%;
+    font-size: 1.125rem;
+    transform: translateX(-50%);
+    top: 13px;
+  }
+}
