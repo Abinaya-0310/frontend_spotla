@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import './customerLogin.css';
 
 function CustomerLogin({ onSignup, onLoginSuccess }) {
@@ -13,13 +14,26 @@ function CustomerLogin({ onSignup, onLoginSuccess }) {
     onSignup(); // ✅ Use the prop instead of navigate
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-      onLoginSuccess(); // ✅ Trigger parent to go to menu
-    }, 2000);
+    try {
+      const res = await axios.post('http://localhost:8080/api/login', {
+        email: username,
+        password: password
+      });
+
+      if (res.data) {
+        alert("Login Successful!");
+        onLoginSuccess();
+      } else {
+        alert("Invalid credentials.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Login Failed. Please try again.");
+    }
+    setIsLoading(false);
   };
 
   return (
@@ -36,7 +50,7 @@ function CustomerLogin({ onSignup, onLoginSuccess }) {
 
       <form className="login-form" onSubmit={handleSubmit}>
         <div className="form-field">
-          <label htmlFor="username" className="field-label">USERNAME:</label>
+          <label htmlFor="username" className="field-label">USERNAME/EMAIL:</label>
           <input
             type="text"
             id="username"

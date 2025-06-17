@@ -1,7 +1,50 @@
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 import './RegisterCustomer.css';
 
 function RegisterCustomer({ onRegister }) {
+    const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    password: '',
+    mobile: '',
+  });
+
+  const handleChange = (e) => {
+    const { value } = e.target;
+    const label = e.target.previousSibling?.textContent;
+
+    switch (label) {
+      case 'FULL NAME:':
+        setFormData({ ...formData, name: value });
+        break;
+      case 'EMAIL:':
+        setFormData({ ...formData, email: value });
+        break;
+      case 'PASSWORD:':
+        setFormData({ ...formData, password: value });
+        break;
+      case 'MOBILE NO:':
+        setFormData({ ...formData, mobile: value });
+        break;
+      default:
+        break;
+    }
+  };
+
+  const handleRegister = async () => {
+    try {
+      console.log("Sending data to backend:", formData);
+
+      await axios.post('http://localhost:8080/api/register', formData);
+      alert('Registered successfully!');
+      onRegister(); // Redirect or show login screen
+    } catch (error) {
+      alert('Registration failed.');
+      console.error(error);
+    }
+  };
+
   return (
     <div className="register-container">
       <img
@@ -13,25 +56,25 @@ function RegisterCustomer({ onRegister }) {
       
       <div className="form-group">
         <label className="form-label">FULL NAME:</label>
-        <input type="text" className="input-field" />
+        <input type="text" className="input-field" onChange={handleChange}/>
       </div>
       
       <div className="form-group">
         <label className="form-label">EMAIL:</label>
-        <input type="email" className="input-field" />
+        <input type="email" className="input-field" onChange={handleChange}/>
       </div>
       
       <div className="form-group">
         <label className="form-label">PASSWORD:</label>
-        <input type="password" className="input-field" />
+        <input type="password" className="input-field" onChange={handleChange}/>
       </div>
       
       <div className="form-group">
         <label className="form-label">MOBILE NO:</label>
-        <input type="tel" className="input-field" />
+        <input type="tel" className="input-field" onChange={handleChange}/>
       </div>
       
-      <button className="register-button" onClick={onRegister}>
+      <button className="register-button" onClick={handleRegister}>
         <span className="register-button-text">REGISTER</span>
       </button>
       
